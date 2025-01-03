@@ -91,7 +91,7 @@ class MathHandler {
     calculatePhiWaveFunction(x, t, energy) {
         const hbar = 1.054571817e-34; // Planck constant
         return Math.exp(-Math.pow(x * this.PHI, 2) / 2) * 
-               Math.exp(-1i * this.PHI * energy * t / hbar);
+               Math.exp(-1 * i * this.PHI * energy * t / hbar);
     }
 
     calculatePhiProbabilityDensity(psi) {
@@ -162,7 +162,7 @@ class PhiQuantumOperators {
 
     momentumOperator(wavefunction, x) {
         const h = 1e-6; // Small step size
-        return -this.PHI * 1i * (wavefunction(x + h) - wavefunction(x)) / h;
+        return -this.PHI * 1 * i * (wavefunction(x + h) - wavefunction(x)) / h;
     }
 
     energyOperator(wavefunction, x, potential) {
@@ -176,6 +176,26 @@ class PhiQuantumOperators {
         return (wavefunction(x + h) - 2 * wavefunction(x) + wavefunction(x - h)) / (h * h);
     }
 }
+
+// Import new operations
+const mathOperations = require('../../mathOperations');
+const dielsAlder = require('../../dielsAlder');
+
+// Add new math operations
+const extendedOperations = {
+    ...mathOperations,
+    dielsAlder: {
+        calculateSymmetry: dielsAlder.calculateSymmetryMeasure,
+        calculateEnthalpy: dielsAlder.calculateActivationEnthalpy,
+        predictRate: dielsAlder.predictReactionRate
+    }
+};
+
+// Export combined operations
+module.exports = {
+    // ...existing code...
+    ...extendedOperations
+};
 
 // Initialize calculator
 const calculator = new InertialFrameCalculator();

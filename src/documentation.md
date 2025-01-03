@@ -45,6 +45,20 @@
 3. Practice implementing algorithms and receive instant feedback.
 4. Experiment with your own algorithm ideas in the sandbox environment.
 
+## Mathematical Operations
+
+### Basic Math Functions
+- `power(base, exponent)`: Calculates power of a number
+- `squareRoot(number)`: Calculates square root
+- `logarithm(number, base)`: Calculates logarithm with optional base
+- `factorial(n)`: Calculates factorial of a number
+- `absolute(number)`: Returns absolute value
+
+### Advanced Chemistry Calculations
+- `dielsAlder.calculateSymmetry(structure)`: Calculates symmetry measure for Diels-Alder reactions
+- `dielsAlder.calculateEnthalpy(symmetryScore, temperature)`: Calculates activation enthalpy
+- `dielsAlder.predictRate(symmetryScore, temperature, solventPolarity)`: Predicts reaction rate
+
 ## Troubleshooting
 
 ### Installation Issues

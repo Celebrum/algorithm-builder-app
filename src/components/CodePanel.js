@@ -46,6 +46,17 @@ const CodePanel = ({ components }) => {
         URL.revokeObjectURL(url);
     };
 
+    const mathFunctions = [
+        { name: 'power', category: 'Basic Math' },
+        { name: 'squareRoot', category: 'Basic Math' },
+        { name: 'logarithm', category: 'Basic Math' },
+        { name: 'factorial', category: 'Basic Math' },
+        { name: 'absolute', category: 'Basic Math' },
+        { name: 'dielsAlder.calculateSymmetry', category: 'Advanced Chemistry' },
+        { name: 'dielsAlder.calculateEnthalpy', category: 'Advanced Chemistry' },
+        { name: 'dielsAlder.predictRate', category: 'Advanced Chemistry' }
+    ];
+
     return (
         <div id="code-panel">
             <h2>Generated Code</h2>

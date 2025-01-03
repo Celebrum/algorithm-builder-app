@@ -3,6 +3,11 @@ const express = require('express');
 const path = require('path');
 const { Pool } = require('pg');
 const Redis = require('redis');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './styles.css';
+import App from './components/App';
+import { initPhiFramework } from '@phi-framework/core';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -32,3 +37,12 @@ app.get('/health', (req, res) => {
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
+
+initPhiFramework();
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
