@@ -65,3 +65,23 @@
 .context-menu-item:hover {
     background-color: #f0f0f0;
 }
+
+/* Styles for visual indicators of drop areas */
+#drop-indicator {
+    border: 2px dashed #000;
+}
+
+/* Styles for snapping feature */
+#algorithm-canvas {
+    background-size: 10px 10px;
+    background-image: linear-gradient(to right, #ccc 1px, transparent 1px),
+                      linear-gradient(to bottom, #ccc 1px, transparent 1px);
+}
+
+/* Styles for component preview during drag-and-drop */
+#drag-preview {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100px;
+    height: 50px;
+    position: absolute;
+}

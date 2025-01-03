@@ -71,4 +71,28 @@ function adminInterface() {
     console.log('Admin interface');
 }
 
-export { oauthClient, oidcClient, authenticateUser, authorizeUser, adminInterface };
+// OAuth2 authentication
+async function authenticateWithOAuth2(code) {
+    try {
+        const tokenResponse = await oauthClient.getToken(code);
+        const userInfo = await oauthClient.getUserInfo(tokenResponse.access_token);
+        return userInfo;
+    } catch (error) {
+        console.error('OAuth2 authentication failed:', error);
+        return null;
+    }
+}
+
+// OpenID Connect authentication
+async function authenticateWithOIDC(code) {
+    try {
+        const tokenResponse = await oidcClient.getToken(code);
+        const userInfo = await oidcClient.getUserInfo(tokenResponse.access_token);
+        return userInfo;
+    } catch (error) {
+        console.error('OpenID Connect authentication failed:', error);
+        return null;
+    }
+}
+
+export { oauthClient, oidcClient, authenticateUser, authorizeUser, adminInterface, authenticateWithOAuth2, authenticateWithOIDC };
