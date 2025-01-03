@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Builder App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Algorithm Builder App</h1>
+    </header>
+    <main>
+        <section id="palette">
+            <h2>Algorithm Components</h2>
+            <div id="components">
+                <!-- Components will be dynamically added here -->
+            </div>
+        </section>
+        <section id="canvas">
+            <h2>Canvas</h2>
+            <div id="algorithm-canvas">
+                <!-- Drag-and-drop interface will be implemented here -->
+            </div>
+        </section>
+        <section id="code-panel">
+            <h2>Generated Code</h2>
+            <pre id="generated-code"></pre>
+            <h3>Feedback</h3>
+            <pre id="code-feedback"></pre>
+            <button id="save-code-button">Save Code</button>
+        </section>
+        <section id="debug-panel">
+            <h2>Debug Panel</h2>
+            <button id="step-through-execution-button">Step Through Execution</button>
+            <h3>Current Line</h3>
+            <pre id="current-line"></pre>
+            <h3>Variable Values</h3>
+            <pre id="variable-values"></pre>
+        </section>
+    </main>
+    <script src="app.js"></script>
+    <script src="components.js"></script>
+    <script src="auth.js"></script>
+    <script src="accessibility.js"></script>
+    <script src="onboarding.js"></script>
+</body>
+</html>

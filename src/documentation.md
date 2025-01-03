@@ -1,6 +1,6 @@
-# Algorithm Builder App
+# Algorithm Builder App Documentation
 
-## Installation Instructions
+## Installation
 
 ### Prerequisites
 - Node.js (v14 or higher)
@@ -25,10 +25,7 @@
 
 4. Open your browser and navigate to `http://localhost:3000` to access the app.
 
-### Video Tutorial
-For a step-by-step guide on how to install the app, watch our [installation video tutorial](https://www.example.com/installation-tutorial).
-
-## Usage Instructions
+## Usage
 
 ### Building an Algorithm
 1. Drag and drop algorithm components from the palette onto the canvas.
@@ -48,7 +45,7 @@ For a step-by-step guide on how to install the app, watch our [installation vide
 3. Practice implementing algorithms and receive instant feedback.
 4. Experiment with your own algorithm ideas in the sandbox environment.
 
-## Troubleshooting Common Issues
+## Troubleshooting
 
 ### Installation Issues
 - Ensure you have the correct versions of Node.js and npm installed.
@@ -72,4 +69,5 @@ To report a bug, please visit our [support page](https://github.com/githubnext/w
 No, the app requires an internet connection to function properly.
 
 ## Support
+
 For further assistance, please visit our [support page](https://github.com/githubnext/workspace-blank/support) or contact us at support@algorithm-builder.com.
