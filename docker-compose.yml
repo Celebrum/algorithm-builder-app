@@ -19,11 +19,11 @@ services:
       retries: 3
     restart: always
   db:
-    image: postgres:13
+    image: postgres:17
     environment:
-      POSTGRES_USER: yourusername
-      POSTGRES_PASSWORD: yourpassword
-      POSTGRES_DB: yourdatabase
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Scrde.ca7476
+      POSTGRES_DB: yneural_network
     volumes:
       - pgdata:/var/lib/postgresql/data
   redis:

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algorithm Builder App</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <header>
@@ -38,6 +40,14 @@
             <h3>Variable Values</h3>
             <pre id="variable-values"></pre>
         </section>
+        <section id="math-panel">
+            <h2>Mathematical Components</h2>
+            <div id="math-input">
+                <textarea id="math-expression" placeholder="Enter LaTeX mathematical expression"></textarea>
+                <button id="render-math">Render Math</button>
+            </div>
+            <div id="math-output"></div>
+        </section>
     </main>
     <script src="components.js"></script>
     <script src="auth.js"></script>
@@ -45,5 +55,6 @@
     <script src="onboarding.js"></script>
     <script src="components/Canvas.js"></script>
     <script src="components/Palette.js"></script>
+    <script src="mathHandler.js"></script>
 </body>
 </html>
