@@ -9,8 +9,8 @@
 ### Steps
 1. Clone the repository:
    ```sh
-   git clone https://github.com/githubnext/workspace-blank.git
-   cd workspace-blank
+   git clone https://github.com/Celebrum/algorithm-builder-app.git
+   cd algorithm-builder-app
    ```
 
 2. Install dependencies:
@@ -63,11 +63,11 @@
 To reset your password, click on the "Forgot Password" link on the login page and follow the instructions.
 
 ### How do I report a bug?
-To report a bug, please visit our [support page](https://github.com/githubnext/workspace-blank/support) or contact us at support@algorithm-builder.com.
+To report a bug, please visit our [support page](https://github.com/Celebrum/algorithm-builder-app/support) or contact us at support@algorithm-builder.com.
 
 ### Can I use the app offline?
 No, the app requires an internet connection to function properly.
 
 ## Support
 
-For further assistance, please visit our [support page](https://github.com/githubnext/workspace-blank/support) or contact us at support@algorithm-builder.com.
+For further assistance, please visit our [support page](https://github.com/Celebrum/algorithm-builder-app/support) or contact us at support@algorithm-builder.com.
