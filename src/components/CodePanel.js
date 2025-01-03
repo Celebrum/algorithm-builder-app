@@ -19,8 +19,16 @@ const CodePanel = ({ components }) => {
     };
 
     const generateCodeForComponent = (type, properties) => {
-        // Placeholder function for generating code based on component type and properties
-        return `// Code for ${type} with properties ${JSON.stringify(properties)}\n`;
+        switch (type) {
+            case 'loop':
+                return `for (let i = 0; i < ${properties.iterations}; i++) {\n  // Loop body\n}\n`;
+            case 'conditional':
+                return `if (${properties.condition}) {\n  // Conditional body\n}\n`;
+            case 'function':
+                return `function ${properties.name}(${properties.parameters.join(', ')}) {\n  // Function body\n}\n`;
+            default:
+                return `// Code for ${type} with properties ${JSON.stringify(properties)}\n`;
+        }
     };
 
     const provideFeedback = (generatedCode) => {

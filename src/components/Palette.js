@@ -11,6 +11,16 @@ const Palette = () => {
         setFilteredComponents(searchComponents(query));
     };
 
+    const handleTouchStart = (event) => {
+        const component = event.target;
+        component.classList.add('dragging');
+    };
+
+    const handleTouchEnd = (event) => {
+        const component = event.target;
+        component.classList.remove('dragging');
+    };
+
     return (
         <div id="palette">
             <h2>Algorithm Components</h2>
@@ -28,6 +38,8 @@ const Palette = () => {
                         draggable
                         data-type={component.type}
                         data-properties={JSON.stringify(component.properties)}
+                        onTouchStart={handleTouchStart}
+                        onTouchEnd={handleTouchEnd}
                     >
                         {component.type}
                     </div>
