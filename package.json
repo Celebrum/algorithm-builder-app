@@ -1,36 +1,33 @@
 {
   "name": "algorithm-builder-app",
   "version": "1.0.0",
-  "description": "Algorithm visualization tool with ϕ-Framework",
+  "description": "Interactive Algorithm Learning Platform",
   "main": "src/index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "react-scripts start",
-    "docker:build": "docker-compose build",
-    "docker:up": "docker-compose up -d"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "build": "webpack --mode production",
+    "test": "jest",
+    "docker:build": "docker build -t algorithm-builder .",
+    "docker:run": "docker run -p 3000:3000 algorithm-builder"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "mathjax": "^3.2.0",
-    "pg": "^8.7.1",
-    "redis": "^4.0.2",
-    "socket.io": "^4.4.1",
-    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "pg": "^8.7.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "@phi-framework/core": "^1.0.0",
-    "react-scripts": "4.0.3",
-    "@babel/core": "^7.16.0",
-    "@babel/preset-react": "^7.16.0",
-    "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.1"
+    "socket.io": "^4.4.1",
+    "dotenv": "^16.0.0",
+    "bcrypt": "^5.0.1",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-react": "^7.16.7",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
     "nodemon": "^2.0.15",
-    "@babel/plugin-proposal-class-properties": "^7.16.0",
-    "babel-loader": "^8.2.3"
+    "jest": "^27.5.1"
   }
 }
