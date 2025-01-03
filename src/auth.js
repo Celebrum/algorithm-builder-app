@@ -1,6 +1,8 @@
 import { OAuth2Client } from 'oauth2-client';
 import { OpenIDConnectClient } from 'openid-connect-client';
 import jwt from 'jsonwebtoken';
+import { Pool } from 'pg';
+import redis from 'redis';
 
 const oauthClient = new OAuth2Client({
     clientId: 'YOUR_CLIENT_ID',
@@ -95,4 +97,23 @@ async function authenticateWithOIDC(code) {
     }
 }
 
-export { oauthClient, oidcClient, authenticateUser, authorizeUser, adminInterface, authenticateWithOAuth2, authenticateWithOIDC };
+// Database connection
+const pool = new Pool({
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
+});
+
+// Redis connection
+const redisClient = redis.createClient({
+    host: process.env.REDIS_HOST,
+    port: process.env.REDIS_PORT
+});
+
+redisClient.on('error', (err) => {
+    console.error('Redis error:', err);
+});
+
+export { oauthClient, oidcClient, authenticateUser, authorizeUser, adminInterface, authenticateWithOAuth2, authenticateWithOIDC, pool, redisClient };

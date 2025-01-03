@@ -94,3 +94,110 @@ The app provides a real-time feedback and debugging environment to help users te
 
 ## Full Documentation
 For more detailed information on the app's features and usage, please refer to the full documentation file: [src/documentation.md](src/documentation.md).
+
+## Docker Setup
+
+### Building and Running the Docker Image
+
+1. Build the Docker image:
+   ```sh
+   docker build -t algorithm-builder-app .
+   ```
+
+2. Run the Docker container:
+   ```sh
+   docker run -p 3000:3000 algorithm-builder-app
+   ```
+
+### Using Docker Compose
+
+1. Create a `docker-compose.yml` file in the root directory with the following content:
+   ```yaml
+   version: '3'
+   services:
+     app:
+       build: .
+       ports:
+         - "3000:3000"
+       env_file:
+         - .env
+       depends_on:
+         - db
+         - redis
+         - nginx
+         - prometheus
+         - grafana
+     db:
+       image: postgres:13
+       environment:
+         POSTGRES_USER: yourusername
+         POSTGRES_PASSWORD: yourpassword
+         POSTGRES_DB: yourdatabase
+       volumes:
+         - pgdata:/var/lib/postgresql/data
+     redis:
+       image: redis:latest
+       ports:
+         - "6379:6379"
+     nginx:
+       image: nginx:latest
+       ports:
+         - "80:80"
+       volumes:
+         - ./nginx.conf:/etc/nginx/nginx.conf
+     prometheus:
+       image: prom/prometheus:latest
+       ports:
+         - "9090:9090"
+       volumes:
+         - ./prometheus.yml:/etc/prometheus/prometheus.yml
+     grafana:
+       image: grafana/grafana:latest
+       ports:
+         - "3001:3001"
+       volumes:
+         - grafana-data:/var/lib/grafana
+   volumes:
+     pgdata:
+     grafana-data:
+   ```
+
+2. Build and run the Docker containers using Docker Compose:
+   ```sh
+   docker-compose up --build
+   ```
+
+### Setting Up Environment Variables
+
+1. Create a `.env` file in the root directory with the following content:
+   ```plaintext
+   PORT=3000
+   NODE_ENV=production
+   DB_HOST=db
+   DB_PORT=5432
+   DB_USER=yourusername
+   DB_PASSWORD=yourpassword
+   DB_NAME=yourdatabase
+   REDIS_HOST=redis
+   REDIS_PORT=6379
+   ```
+
+### Handling Database Connections
+
+1. Update your application code to use the environment variables for database connection details. For example, in `src/auth.js`:
+   ```javascript
+   const { Pool } = require('pg');
+   const pool = new Pool({
+     host: process.env.DB_HOST,
+     port: process.env.DB_PORT,
+     user: process.env.DB_USER,
+     password: process.env.DB_PASSWORD,
+     database: process.env.DB_NAME
+   });
+   ```
+
+### Adding Redis, Nginx, and Monitoring Services
+
+1. Add a Redis service to the `docker-compose.yml` file to handle caching and session management.
+2. Add a reverse proxy service (e.g., Nginx) to the `docker-compose.yml` file to handle incoming requests and route them to the appropriate services.
+3. Add a monitoring service (e.g., Prometheus and Grafana) to the `docker-compose.yml` file to monitor the application's performance and resource usage.
