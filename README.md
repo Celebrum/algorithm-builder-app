@@ -127,6 +127,12 @@ For more detailed information on the app's features and usage, please refer to t
          - nginx
          - prometheus
          - grafana
+       healthcheck:
+         test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+         interval: 30s
+         timeout: 10s
+         retries: 3
+       restart: always
      db:
        image: postgres:13
        environment:
@@ -136,7 +142,7 @@ For more detailed information on the app's features and usage, please refer to t
        volumes:
          - pgdata:/var/lib/postgresql/data
      redis:
-       image: redis:latest
+       image: redis:6.2.6
        ports:
          - "6379:6379"
      nginx:
@@ -201,3 +207,6 @@ For more detailed information on the app's features and usage, please refer to t
 1. Add a Redis service to the `docker-compose.yml` file to handle caching and session management.
 2. Add a reverse proxy service (e.g., Nginx) to the `docker-compose.yml` file to handle incoming requests and route them to the appropriate services.
 3. Add a monitoring service (e.g., Prometheus and Grafana) to the `docker-compose.yml` file to monitor the application's performance and resource usage.
+
+### Note about Node.js Version
+The Dockerfile has been updated to use the latest LTS version of Node.js.
