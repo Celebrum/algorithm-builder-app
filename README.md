@@ -9,8 +9,8 @@
 ### Steps
 1. Clone the repository:
    ```sh
-   git clone https://github.com/githubnext/workspace-blank.git
-   cd workspace-blank
+   git clone https://github.com/Celebrum/algorithm-builder-app.git
+   cd algorithm-builder-app
    ```
 
 2. Install dependencies:
@@ -26,7 +26,7 @@
 4. Open your browser and navigate to `http://localhost:3000` to access the app.
 
 ### Video Tutorial
-For a step-by-step guide on how to install the app, watch our [installation video tutorial](https://www.example.com/installation-tutorial).
+For a step-by-step guide on how to install the app, watch our [installation video tutorial](https://www.example.com/algorithm-builder-app-installation-tutorial).
 
 ## Usage Instructions
 
@@ -66,13 +66,13 @@ For a step-by-step guide on how to install the app, watch our [installation vide
 To reset your password, click on the "Forgot Password" link on the login page and follow the instructions.
 
 ### How do I report a bug?
-To report a bug, please visit our [support page](https://github.com/githubnext/workspace-blank/support) or contact us at support@algorithm-builder.com.
+To report a bug, please visit our [support page](https://github.com/Celebrum/algorithm-builder-app/support) or contact us at support@algorithm-builder.com.
 
 ### Can I use the app offline?
 No, the app requires an internet connection to function properly.
 
 ## Support
-For further assistance, please visit our [support page](https://github.com/githubnext/workspace-blank/support) or contact us at support@algorithm-builder.com.
+For further assistance, please visit our [support page](https://github.com/Celebrum/algorithm-builder-app/support) or contact us at support@algorithm-builder.com.
 
 ## Onboarding Wizard
 The onboarding wizard guides users through the basic setup and usage of the app. It provides an interactive tutorial with clear instructions and tooltips for each key element, such as the palette, canvas, generate code button, and debug button. The onboarding wizard includes pre-built algorithm templates for quick customization, making it easier for beginners to get started with building algorithms.
