@@ -6,7 +6,7 @@ const Redis = require('redis');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles.css';
-import App from './components/App';
+import App from './App';
 import { initPhiFramework } from '@phi-framework/core';
 
 const app = express();
