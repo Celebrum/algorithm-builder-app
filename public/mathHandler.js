@@ -1,6 +1,7 @@
+const math = require('mathjs');
+
 class MathHandler {
     constructor() {
-        this.PHI = (1 + Math.sqrt(5)) / 2; // Golden ratio
         this.setupMathComponents();
     }
 
@@ -34,19 +35,13 @@ class MathHandler {
         
         this.mathOperations = {
             phiDerivative: (f, x) => {
-                return (f(x + this.PHI) - f(x)) / this.PHI;
+                return math.derivative(f, 'x').evaluate({ x });
             },
-            phiIntegral: (f, a, b, steps = 1000) => {
-                const dx = (b - a) / steps;
-                let sum = 0;
-                for (let i = 0; i < steps; i++) {
-                    const x = a + i * dx;
-                    sum += f(x) * this.PHI * dx;
-                }
-                return sum;
+            phiIntegral: (f, a, b) => {
+                return math.integral(f, 'x', a, b).evaluate();
             },
             phiTransform: (f) => {
-                return (x) => f(x * this.PHI);
+                return (x) => f(x * math.phi);
             }
         };
 
@@ -85,17 +80,17 @@ class MathHandler {
 
     // Add rigorous mathematical operations
     calculatePhiHarmonics(n) {
-        return Array.from({length: n}, (_, i) => Math.pow(this.PHI, i));
+        return Array.from({length: n}, (_, i) => Math.pow(math.phi, i));
     }
 
     calculatePhiWaveFunction(x, t, energy) {
         const hbar = 1.054571817e-34; // Planck constant
-        return Math.exp(-Math.pow(x * this.PHI, 2) / 2) * 
-               Math.exp(-1 * i * this.PHI * energy * t / hbar);
+        return Math.exp(-Math.pow(x * math.phi, 2) / 2) * 
+               Math.exp(-1 * i * math.phi * energy * t / hbar);
     }
 
     calculatePhiProbabilityDensity(psi) {
-        return (x) => Math.pow(Math.abs(psi(x)), 2) * this.PHI;
+        return (x) => Math.pow(Math.abs(psi(x)), 2) * math.phi;
     }
 }
 
@@ -115,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 class InertialFrameCalculator {
     constructor() {
-        this.PHI = (1 + Math.sqrt(5)) / 2; // Golden ratio
+        this.PHI = math.phi; // Golden ratio
     }
 
     // Earth's rotation velocity with ϕ

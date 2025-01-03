@@ -1,14 +1,8 @@
-# Algorithm Builder App with ϕ-Framework
+# Algorithm Builder App
 
-A sophisticated algorithm visualization and development tool that leverages the golden ratio (ϕ) framework for mathematical computations and physical simulations.
+A sophisticated algorithm visualization and development tool.
 
 ## Features
-
-- **ϕ-Framework Integration**
-  - Advanced mathematical computations using golden ratio principles
-  - Physical simulations with ϕ-adjusted formulas
-  - Inertial frame calculations with golden ratio harmonics
-  - Real-time visualization of ϕ-based mathematical expressions
 
 - **Core Functionality**
   - Interactive algorithm building interface
@@ -20,7 +14,7 @@ A sophisticated algorithm visualization and development tool that leverages the 
 ## Technical Stack
 
 - **Frontend**: HTML5, CSS3, JavaScript
-- **Mathematical Processing**: MathJax, ϕ-Framework
+- **Mathematical Processing**: MathJax, mathjs
 - **Infrastructure**: Docker, Nginx
 - **Monitoring**: Prometheus, Grafana
 - **Database**: PostgreSQL
@@ -53,8 +47,8 @@ docker-compose up -d
 
 1. **Mathematical Components**
    - Use the math panel to input LaTeX expressions
-   - Leverage ϕ-framework calculations for physical simulations
-   - Visualize mathematical functions with golden ratio optimizations
+   - Leverage mathjs calculations for mathematical operations
+   - Visualize mathematical functions
 
 2. **Algorithm Building**
    - Drag and drop components from the palette

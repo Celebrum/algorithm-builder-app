@@ -7,7 +7,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles.css';
 import App from './App';
-import { initPhiFramework } from '@phi-framework/core';
+import { create, all } from 'mathjs';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -38,7 +38,7 @@ app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
 
-initPhiFramework();
+const math = create(all);
 
 ReactDOM.render(
   <React.StrictMode>
