@@ -73,3 +73,24 @@ No, the app requires an internet connection to function properly.
 
 ## Support
 For further assistance, please visit our [support page](https://github.com/githubnext/workspace-blank/support) or contact us at support@algorithm-builder.com.
+
+## Onboarding Wizard
+The onboarding wizard guides users through the basic setup and usage of the app. It provides an interactive tutorial with clear instructions and tooltips for each key element, such as the palette, canvas, generate code button, and debug button. The onboarding wizard includes pre-built algorithm templates for quick customization, making it easier for beginners to get started with building algorithms.
+
+## Accessibility Features
+The app includes various accessibility features to ensure it is usable by people with disabilities. These features include high-contrast mode, screen reader compatibility, semantic HTML, ARIA attributes, and focus management.
+
+## UI Customization
+The app provides several UI customization options, such as zoom and pan functionalities in the canvas area and search functionality in the palette. Users can adjust the view of the canvas area and filter algorithm components easily.
+
+## Algorithm Templates
+The app includes pre-built algorithm templates that users can load and customize. These templates serve as examples and provide a quick start for building algorithms. Users can modify parameters, add or remove steps, and change the logic as needed.
+
+## OAuth2 and OpenID Connect Authentication
+The app supports OAuth2 and OpenID Connect authentication methods. Users can set up and configure these authentication methods to secure their accounts and access the app's features.
+
+## Real-Time Feedback and Debugging Environment
+The app provides a real-time feedback and debugging environment to help users test and debug their algorithms. The debug panel allows users to step through the execution of algorithms, view the current line of code, and inspect variable values.
+
+## Full Documentation
+For more detailed information on the app's features and usage, please refer to the full documentation file: [src/documentation.md](src/documentation.md).
