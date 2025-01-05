@@ -22,8 +22,8 @@ services:
     image: postgres:17
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: Scrde.ca7476
-      POSTGRES_DB: yneural_network
+      POSTGRES_PASSWORD: your_DB_password
+      POSTGRES_DB: neural_network
     volumes:
       - pgdata:/var/lib/postgresql/data
   redis:
