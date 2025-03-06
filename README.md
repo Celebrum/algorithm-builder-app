@@ -60,6 +60,11 @@ docker-compose up -d
    - Monitor variable values
    - Analyze algorithm performance
 
+4. **Neutrosophic Logic and Neutrosophic Linear Model**
+   - Define Neutrosophic Components (T, I, F)
+   - Implement Neutrosophic Logic Operations (negation, conjunction, disjunction, implication, equivalence)
+   - Apply Neutrosophic Logic to problem solving
+
 ## Contributing
 
 1. Fork the repository

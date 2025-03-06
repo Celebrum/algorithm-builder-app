@@ -59,6 +59,11 @@
 - `dielsAlder.calculateEnthalpy(symmetryScore, temperature)`: Calculates activation enthalpy
 - `dielsAlder.predictRate(symmetryScore, temperature, solventPolarity)`: Predicts reaction rate
 
+### Neutrosophic Logic and Neutrosophic Linear Model
+- Define Neutrosophic Components (T, I, F)
+- Implement Neutrosophic Logic Operations (negation, conjunction, disjunction, implication, equivalence)
+- Apply Neutrosophic Logic to problem solving
+
 ## Troubleshooting
 
 ### Installation Issues

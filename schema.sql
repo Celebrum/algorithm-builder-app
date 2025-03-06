@@ -13,7 +13,10 @@ CREATE TABLE algorithms (
     category VARCHAR(50),
     complexity_notation VARCHAR(20),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    created_by INTEGER REFERENCES users(user_id)
+    created_by INTEGER REFERENCES users(user_id),
+    neutrosophic_truth JSONB,
+    neutrosophic_indeterminacy JSONB,
+    neutrosophic_falsehood JSONB
 );
 
 CREATE TABLE algorithm_steps (
@@ -23,7 +26,10 @@ CREATE TABLE algorithm_steps (
     description TEXT NOT NULL,
     code_snippet TEXT,
     visualization_data JSONB,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    neutrosophic_truth JSONB,
+    neutrosophic_indeterminacy JSONB,
+    neutrosophic_falsehood JSONB
 );
 
 CREATE TABLE user_progress (

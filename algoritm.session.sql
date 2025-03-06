@@ -54,3 +54,40 @@ VALUES
     'Apply to geomagnetic field modeling',
     'B_field = B_0 * exp(-r/φ) * cos(ω_phi * t)'
 );
+
+-- Insert Neutrosophic Linear Model (NLM) Algorithm
+INSERT INTO algorithms (title, description, category, complexity_notation) 
+VALUES (
+    'Neutrosophic Linear Model (NLM)',
+    'A model that generalizes intuitionistic fuzzy logic to neutrosophic logic, allowing for the representation of truth, indeterminacy, and falsehood as subsets of the non-standard interval ]-0, 1+[.',
+    'Mathematical Logic',
+    'O(n)'
+);
+
+-- Insert NLM algorithm steps
+INSERT INTO algorithm_steps (algorithm_id, step_number, description, code_snippet) 
+VALUES 
+(
+    (SELECT id FROM algorithms WHERE title = 'Neutrosophic Linear Model (NLM)'),
+    1,
+    'Define Neutrosophic Components',
+    'let T = {t1, t2, ..., tn}; let I = {i1, i2, ..., in}; let F = {f1, f2, ..., fn};'
+),
+(
+    (SELECT id FROM algorithms WHERE title = 'Neutrosophic Linear Model (NLM)'),
+    2,
+    'Calculate Neutrosophic Truth Value',
+    'let NLt(A) = (T, I, F);'
+),
+(
+    (SELECT id FROM algorithms WHERE title = 'Neutrosophic Linear Model (NLM)'),
+    3,
+    'Implement Neutrosophic Logic Operations',
+    'function neutrosophicNegation(A) { return { T: {1+} - A.T, I: {1+} - A.I, F: {1+} - A.F }; }'
+),
+(
+    (SELECT id FROM algorithms WHERE title = 'Neutrosophic Linear Model (NLM)'),
+    4,
+    'Apply Neutrosophic Logic to Problem Solving',
+    'let result = neutrosophicNegation(NLt(A));'
+);
