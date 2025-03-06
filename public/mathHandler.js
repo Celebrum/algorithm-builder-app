@@ -30,6 +30,22 @@ class MathHandler {
                 name: 'ϕ-Field', 
                 latex: 'G_{\\mu\\nu} = \\phi R_{\\mu\\nu} - \\frac{1}{2}\\phi g_{\\mu\\nu}R',
                 description: 'φ-modified field equations'
+            },
+            // Neutrosophic Logic Components
+            {
+                name: 'Neutrosophic Truth',
+                latex: 'T',
+                description: 'Neutrosophic Truth Component'
+            },
+            {
+                name: 'Neutrosophic Indeterminacy',
+                latex: 'I',
+                description: 'Neutrosophic Indeterminacy Component'
+            },
+            {
+                name: 'Neutrosophic Falsehood',
+                latex: 'F',
+                description: 'Neutrosophic Falsehood Component'
             }
         ];
         
@@ -42,6 +58,22 @@ class MathHandler {
             },
             phiTransform: (f) => {
                 return (x) => f(x * math.phi);
+            },
+            // Neutrosophic Logic Operations
+            neutrosophicNegation: (A) => {
+                return { T: 1 - A.T, I: 1 - A.I, F: 1 - A.F };
+            },
+            neutrosophicConjunction: (A, B) => {
+                return { T: A.T * B.T, I: A.I * B.I, F: A.F * B.F };
+            },
+            neutrosophicDisjunction: (A, B) => {
+                return { T: A.T + B.T - A.T * B.T, I: A.I + B.I - A.I * B.I, F: A.F + B.F - A.F * B.F };
+            },
+            neutrosophicImplication: (A, B) => {
+                return { T: 1 - A.T + A.T * B.T, I: 1 - A.I + A.I * B.I, F: 1 - A.F + A.F * B.F };
+            },
+            neutrosophicEquivalence: (A, B) => {
+                return { T: 1 - Math.abs(A.T - B.T), I: 1 - Math.abs(A.I - B.I), F: 1 - Math.abs(A.F - B.F) };
             }
         };
 
